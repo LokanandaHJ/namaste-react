@@ -24,7 +24,8 @@
       margin: 10px;
 }
 
-.res-card {
+.res-card,.shimmer-card {
+      word-wrap: break-word;
       border-radius: 20px;
       background-color: aliceblue;
       display: flex;
@@ -32,8 +33,11 @@
       justify-content: space-between;
       padding: 5px;
       width: 200px;
-      height: 350px;
       margin: 5px;
+}
+
+.shimmer-card {
+      height: 250px;
 }
 
 .res-card:hover {
@@ -55,12 +59,16 @@
       margin: 0px !important;
 }
 
-.res-container {
+.res-container,.shimmer-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
 }
-
+/* 
 .body {
-      background-color: #ccf8f3;
+      background-color: #c9dbd9;
+} */
+
+.filter-btn{
+      margin: 10px;
 }
