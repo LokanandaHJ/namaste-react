@@ -28,3 +28,48 @@ Without any dependencies [] useEffect is called everytime component is rendered
 - server side -> HTML is coming from server side -> make network call to server for info
 
 ## Dynamic routing
+
+useRouteError from react-router-dom -> create cutom error page
+createBrowserRouter from react-router-dom -> used to create paths to routes
+
+Mounting and rendering both are same
+
+constructor -> Render -> component didMount
+
+component did mount will be called when child is mounted first
+PC -> PR -> CC -> CR -> CD -> PD
+
+PC -> PR -> 1CC -> 1CR -> 2CC -> 2CR -> 1CD -> 2CD -> PD
+
+componentDidMount is used for API calls
+
+- Render the comp -> fill the data in component
+- so we make API calls inside CD
+
+React
+
+- Render and Commit phase
+
+-Render phase will be fast
+-commit phase will be slow as DOM manipulation or DOM updatation
+
+componentDidmount
+componentDidUpdate
+CoponentUnmount
+
+Hooks -> Normal JavaScript utility functions
+
+.postcssRc -> Parcel needs to understand that its using tailwind for css
+
+tailwind is light weight
+
+Higher order component takes components and returns a component
+-pure functions
+
+controlled and Uncontrolled components -> Uncontrolled components will have their own state and controlled are controlled by parents for example that itemList state is maintained by restarunt menu
+
+Body(its Home page and it shows multiple rest cards) ----------> Restrauntcards (these are each cards shown in menu)----(from here based on id of res using Link and appRouter)----> RestrauntMenu (here we show only name of rest) ------> RestrauntCategory (here we show accordian ) -----(to show accordian we use itemList)---->itemList
+
+Props drilling can be avoided using the React context
+
+Redux toolkit

@@ -1,74 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .header {
-      display: flex;
-      justify-content: space-between;
-      border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
 }
 
 .res-logo {
-      width: 100px;
-      height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .nav-items {
-      padding: 0px 20px;
+  padding: 0px 20px;
 }
 
-.nav-items>ul {
-      font-size: 20px;
-      display: flex;
-      list-style-type: none;
+.nav-items > ul {
+  font-size: 20px;
+  display: flex;
+  list-style-type: none;
 }
 
-.nav-items>ul>li {
-      padding: 10px;
-      margin: 10px;
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
 }
 
-.res-card,.shimmer-card {
-      word-wrap: break-word;
-      border-radius: 20px;
-      background-color: aliceblue;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 5px;
-      width: 200px;
-      margin: 5px;
+.res-card,
+.shimmer-card {
+  word-wrap: break-word;
+  border-radius: 20px;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  width: 200px;
+  margin: 5px;
 }
 
 .shimmer-card {
-      height: 250px;
+  height: 250px;
 }
 
 .res-card:hover {
-      border: 1px solid black;
-      cursor: pointer;
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 .search-bar {
-      padding: 10px;
+  padding: 10px;
+}
+
+.search-input {
+  border: 2px solid;
+  border-radius: 5px;
 }
 
 .card-image {
-      border-radius: 20px;
-      padding: 5px;
-      width: 190px;
+  border-radius: 20px;
+  padding: 5px;
+  width: 190px;
 }
 
 .res-card-info {
-      margin: 0px !important;
+  margin: 0px !important;
 }
 
-.res-container,.shimmer-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+.res-container,
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 /* 
 .body {
       background-color: #c9dbd9;
 } */
 
-.filter-btn{
-      margin: 10px;
+.filter-btn {
+  margin: 10px;
 }

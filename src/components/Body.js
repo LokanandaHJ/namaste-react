@@ -1,12 +1,19 @@
-import RestrauntCard from "./RestaurantCard";
+import RestrauntCard, { PromotedRestrauntCard } from "./RestaurantCard";
 import { resList } from '../utils/mockData';
 import React from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 
 const Body = () => {
     const [searchText, setSearchText] = React.useState('');
     const [listOfRestaurants, setListOfRestaurants] = React.useState([]);
-    const [filteredRestaurants,setFilteredRestaurants] = React.useState([]);
+    const [filteredRestaurants, setFilteredRestaurants] = React.useState([]);
+
+    const RestaurantCardWithPromoted = PromotedRestrauntCard(RestrauntCard);
+    const loggedInUserData = React.useContext(UserContext);
+
 
     const fetchApiData = async () => {
         const ApiKey = '28f752649a6da187';
@@ -39,21 +46,38 @@ const Body = () => {
 
     const searchFilter = (e) => {
         setSearchText(e.target.value);
-        const filteredRest = listOfRestaurants.filter(res=> res.info.name.toLowerCase().includes(e.target.value));
+        const filteredRest = listOfRestaurants.filter(res => res.info.name.toLowerCase().includes(e.target.value));
         setFilteredRestaurants(filteredRest);
+    }
+
+    const onlineStatus = useOnlineStatus();
+
+    if (onlineStatus === false) {
+        return (
+            <div>
+                <h1>You are currently offline</h1>
+            </div>
+        )
     }
 
     return listOfRestaurants.length === 0 ? (<Shimmer />) :
         (
             <div className='body'>
                 <div className='search-bar'>
-                    <input className="search-input" value={searchText} onChange={e=>{searchFilter(e)}}></input>
-                    </div>
+                    <input className="search-input" value={searchText} onChange={e => { searchFilter(e) }}></input>
+                </div>
+                <div className='search-bar'>
+                    <input className="search-input" value={loggedInUserData.loggedInUser} onChange={e => { loggedInUserData.setLoggedInUser(e.target.value) }}></input>
+                </div>
                 {/* <button className="filter-btn" onClick={() => filterRest()}>Top Restaurants</button> */}
-                <div className='res-container'>
+                <div className='flex flex-wrap justify-between'>
                     {
                         filteredRestaurants.map(res => (
-                            <RestrauntCard resData={res.info} key={res.info.id} />
+                            <Link to={"/restaurant/" + res.info.id} >
+                                {
+                                    res.promoted ? <RestaurantCardWithPromoted key={res.info.id} resData={res.info} /> : <RestrauntCard key={res.info.id} resData={res.info} />
+                                }
+                            </Link>
                         ))
                     }
                 </div>

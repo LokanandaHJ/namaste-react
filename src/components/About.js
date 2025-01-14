@@ -1,10 +1,12 @@
-import React from 'react'; 
+import React from 'react';
+import UserClass from './UserClass';
+import UserFunctionalComponent from './User';
 
 const About = () => {
     return (
         <div>
-            <h1>About Us</h1>
-            <p>This is a simple about page.</p>
+            <UserFunctionalComponent name={"Loka"} location={"Bengaluru"} />
+            <UserClass name={"Loka from class"} location={"Bengaluru from karnataka"} />
         </div>
     );
 }
