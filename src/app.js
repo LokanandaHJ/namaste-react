@@ -12,6 +12,7 @@ import UserContext from "./utils/userContext";
 const About = React.lazy(() => import("./components/About"));
 import { Provider } from 'react-redux';
 import AppStore from './utils/appStore';
+import Cart from "./components/Cart";
 
 // // JSX is transpiled(convert to what browser understand) before it reaches the JS engine -> done by Parcel -> Babel which is inside Parcel (Babel is a JS compiler)
 // // JSX => transform JSX into React.createElement => React element JS Object => HTML Object in browser
@@ -67,6 +68,10 @@ const appROuter = createBrowserRouter([
         path: "/restaurant/:id",
         element: <RestaurantMenu />,
       },
+      {
+        path: "/cart",
+        element: <Cart />
+      }
     ],
     errorElement: <Error />,
   },

@@ -73,3 +73,9 @@ Body(its Home page and it shows multiple rest cards) ----------> Restrauntcards 
 Props drilling can be avoided using the React context
 
 Redux toolkit
+
+Reducer vs Reducers
+Reducer is used in store and is a combination of multiple reducers
+Reducers are used in slice
+
+Redux uses Immer BTS

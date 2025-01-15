@@ -25,9 +25,8 @@ const Header = () => {
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/about'>About us</Link></li>
                         <li><Link to='/contact'>Contact us</Link></li>
-                        <li><Link to='/cart'>Cart</Link></li>
+                        <li><Link to='/cart'>Cart: {cartItems.length}</Link></li>
                         <button onClick={() => btnNameReact === 'Login' ? (setBtnNameReact("Logout")) : (setBtnNameReact("Login"))}>{btnNameReact}</button>
-                        <li>Cart: {cartItems.length}</li>
                         <li className="font-bold">{userData.loggedInUser}</li>
                     </ul>
                 </div>
