@@ -79,3 +79,21 @@ Reducer is used in store and is a combination of multiple reducers
 Reducers are used in slice
 
 Redux uses Immer BTS
+
+Testing
+
+- Unit testing
+- Integration testing
+- End to End testing
+
+JEST (react testing library uses JEST for testing)
+
+JEST uses Babel
+
+React testing library
+
+- Install react tetsing lib
+- Install Jest
+- Install Babel dependencies
+- Configure Babel (this is for Jestnpm )
+- Configure parcel config file to disable default babel transpilation (Parcel uses Babel already so we need to change some)
